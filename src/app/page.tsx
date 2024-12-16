@@ -16,14 +16,12 @@ export default function Home() {
   return (
     <div className="relative flex flex-col items-center">
       {/* Background Video */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-        autoPlay
-        loop
-        muted>
-        <source src="/assets/background.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
+        <video className="w-full h-full object-cover" autoPlay loop muted>
+          <source src="/assets/background.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
       {/* Main Content */}
       <div className="relative w-full flex flex-col items-center">
@@ -32,14 +30,16 @@ export default function Home() {
           className="relative h-screen w-full bg-cover dark:text-white my-4 mx-4 mt-0"
           style={{ opacity: heroOpacity, scale: heroScale }}>
           {/* Background Video */}
-          <video
-            className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
-            autoPlay
-            loop
-            muted>
-            <source src="/assets/mainpage.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
+            <video
+              className="w-full h-full object-cover rounded-2xl"
+              autoPlay
+              loop
+              muted>
+              <source src="/assets/mainpage.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
           {/* Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div>
